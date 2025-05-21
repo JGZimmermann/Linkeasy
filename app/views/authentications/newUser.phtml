@@ -1,0 +1,37 @@
+<form action="<?= route('users.create') ?>" method="POST">
+
+  <div class="form-group mb-3">
+    <label for="user_name" class="form-label">Nome</label>
+    <input id="user_name" type="text" name="user[name]" class="form-control" placeholder="Digite o nome">
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="user_email" class="form-label">Email</label>
+    <input id="user_email" type="email" name="user[email]" class="form-control" placeholder="Digite o email">
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="user_password" class="form-label">Senha</label>
+    <input id="user_password" type="password" name="user[password]" class="form-control" placeholder="Digite a senha">
+  </div>
+
+  <div class="form-group mb-4">
+    <label class="form-label d-block">Tipo de Usuário</label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="user[role]" id="estudante" value="STUDENT">
+      <label class="form-check-label" for="estudante">Estudante</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="user[role]" id="professor" value="PROFESSOR">
+      <label class="form-check-label" for="professor">Professor</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="user[role]" id="moderador" value="MODERATOR">
+      <label class="form-check-label" for="moderador">Moderador</label>
+    </div>
+  </div>
+
+  <div class="d-grid">
+    <input type="submit" class="btn btn-primary btn-block" value="Cadastrar">
+  </div>
+</form>
