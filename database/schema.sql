@@ -1,0 +1,49 @@
+SET foreign_key_checks = 0;
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    encrypted_password VARCHAR(255) NOT NULL,
+    role ENUM('STUDENT', 'PROFESSOR', 'MODERATOR') NOT NULL,
+    photo_url VARCHAR(255)
+);
+
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    body TEXT NOT NULL,
+    date DATETIME NOT NULL,
+    user_id INT REFERENCES users(user_id) ON DELETE SET NULL
+);
+
+DROP TABLE IF EXISTS posts_updates;
+
+CREATE TABLE posts_updates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    content VARCHAR(255) NOT NULL,
+    status ENUM('PENDING', 'APPROVED', 'REJECTED') NOT NULL,
+    user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
+    post_id INT NOT NULL REFERENCES posts(post_id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS tags;
+
+CREATE TABLE tags (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+DROP TABLE IF EXISTS tags_in_posts;
+
+CREATE TABLE tags_in_posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tag_id INT NOT NULL REFERENCES tags(tag_id) ON DELETE SET NULL,
+    post_id INT NOT NULL REFERENCES posts(post_id) ON DELETE SET NULL
+);
+
+SET foreign_key_checks = 1;

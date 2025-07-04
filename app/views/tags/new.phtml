@@ -1,0 +1,9 @@
+<form action="<?= route('tags.create') ?>" method="POST" class="<?= $tag->hasErrors() ? '' : 'was-validated' ?>" novalidate>
+  <div class="mb-3">
+    <label for="tag_name" class="form-label">Título:</label>
+    <input type="text" value="<?= $tag->name ?? '' ?>" name="tag[name]" class="form-control" id="tag_name" required>
+    <div class="invalid-feedback"><?= $tag->errors('name') ?? '' ?></div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Registrar</button>
+</form>

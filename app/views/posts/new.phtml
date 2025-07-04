@@ -1,0 +1,32 @@
+<form action="<?= route('posts.create') ?>" method="POST" class="<?= $post->hasErrors() ? '' : 'was-validated' ?>" novalidate>
+  <div class="mb-3">
+    <label for="post_title" class="form-label">Título:</label>
+    <input type="text" value="<?= $post->title ?? '' ?>" name="post[title]" class="form-control" id="post_title" required>
+    <div class="invalid-feedback"><?= $post->errors('title') ?? '' ?></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="post_content" class="form-label">Conteúdo:</label>
+    <textarea name="post[body]" id="post_body" class="form-control" required><?= $post->body ?? '' ?></textarea>
+    <div class="invalid-feedback"><?= $post->errors('content') ?? '' ?></div>
+  </div>
+
+  <div class="mb-3">
+    <label for="post_published_at" class="form-label">Data de Publicação:</label>
+    <input type="date" value="<?= $post->date ?? '' ?>" name="post[date]" class="form-control" id="date">
+  </div>
+
+  <div class="mb-3">
+    <label for="tags" class="form-label">Tags:</label>
+    <select name="tags[]" id="tags" class="form-select" multiple required>
+      <?php foreach ($tags as $tag): ?>
+        <option value="<?= $tag->id ?>">
+          <?= htmlspecialchars($tag->name) ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+

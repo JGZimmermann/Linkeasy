@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-8 mb-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Procurar post" aria-label="Procurar post" aria-describedby="button-addon2">
+      <button class="btn btn-outline-primary" type="button">
+        Pesquisar...
+      </button>
+    </div>
+  </div>
+  <div class="col-4">
+    <a href="<?= route('posts.new') ?>" class="btn btn-outline-primary">
+      <i class="fe fe-plus"></i>
+      Registrar Post
+    </a>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-2">
+  <?php foreach ($posts as $post): ?>
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"><?= htmlspecialchars($post->title) ?></h5>
+          <p class="card-text text-muted">
+            Autor: <?= htmlspecialchars($post->user->name ?? 'Desconhecido') ?>
+          </p>
+          <div class="d-flex justify-content-between">
+            <a href="<?= route('posts.show', ['id' => $post->id]) ?>" class="btn btn-sm btn-outline-primary">Ver</a>
+            <div class="btn-group">
+              <a href="<?= route('posts.edit', ['id' => $post->id]) ?>" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+              <form action="<?= route('posts.destroy', ['id' => $post->id]) ?>" method="POST" class="d-inline">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-sm btn-outline-danger">
+                  <i class="bi bi-archive"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+</div>
+
+<?php $paginator->renderPagesNavigation(); ?>

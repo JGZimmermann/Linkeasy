@@ -1,0 +1,23 @@
+<div class="card mb-4 shadow-sm">
+  <div class="card-body">
+    <h3 class="card-title mb-1"><?= htmlspecialchars($post->title) ?></h3>
+
+    <p class="text-muted mb-3" style="font-size: 0.9rem;">
+      Por <?= htmlspecialchars($post->user->name ?? 'Autor desconhecido') ?>
+    </p>
+
+    <p class="card-text" style="white-space: pre-wrap; font-size: 1.1rem; line-height: 1.5;">
+      <?= nl2br(htmlspecialchars($post->body)) ?>
+    </p>
+      <div class="mt-3 mb-2">
+        <?php foreach ($post->tags as $tag): ?>
+          <span class="badge bg-secondary me-1"><?= htmlspecialchars($tag->name) ?></span>
+        <?php endforeach; ?>
+      </div>
+    <footer class="text-muted mt-4">
+      <small>
+        <?= date('F j, Y \a\t H:i', strtotime($post->date)) ?>
+      </small>
+    </footer>
+  </div>
+</div>
