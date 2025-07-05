@@ -3,7 +3,7 @@
 # This means that these configurations apply to all files in this directory and its subdirectories
 root = true
 
-# Set default formatting options for all files
+# Set defaults formatting options for all files
 [*]
 charset = utf-8
 indent_size = 2

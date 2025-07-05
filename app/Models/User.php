@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\ProfileAvatar;
 use Core\Database\ActiveRecord\HasMany;
 use Lib\Validations;
 use Core\Database\ActiveRecord\Model;
@@ -76,5 +77,10 @@ class User extends Model
         ) {
         $this->encrypted_password = password_hash($value, PASSWORD_DEFAULT);
         }
+    }
+
+    public function avatar(): ProfileAvatar
+    {
+      return new ProfileAvatar($this);
     }
 }

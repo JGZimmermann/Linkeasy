@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\AuthenticationsController;
+use App\Controllers\ProfileController;
 use App\Controllers\PostController;
 use App\Controllers\TagController;
 use Core\Router\Route;
@@ -17,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/posts', [PostController::class, 'create'])->name('posts.create');
     Route::get('/tags/new', [TagController::class, 'new'])->name('tags.new');
     Route::post('/tags', [TagController::class, 'create'])->name('tags.create');
+    Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
 
     // Retrieve
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
@@ -25,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/tags', [TagController::class, 'index'])->name('tags.index');
     Route::get('/tags/page/{page}', [TagController::class, 'index'])->name('tags.paginate');
     Route::get('/tags/{id}', [TagController::class, 'show'])->name('tags.show');
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
 
     // Update
     Route::get('/tags/{id}/edit', [TagController::class, 'edit'])->name('tags.edit');
