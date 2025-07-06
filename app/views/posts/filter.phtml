@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-8 mb-3">
     <form action="<?= route('posts.search') ?>" method="POST" novalidate>
-        <div class="input-group">
-            <input type="text" value="<?= $post->title ?? '' ?>" name="post[title]" class="form-control" placeholder="Procurar post" aria-label="Procurar post" aria-describedby="button-addon2">
-            <button class="btn btn-outline-primary" type="submit">
-                Pesquisar
-            </button>
-        </div>
+      <div class="input-group">
+        <input type="text" value="<?= $post->title ?? '' ?>" name="post[title]" class="form-control" placeholder="Procurar post" aria-label="Procurar post" aria-describedby="button-addon2">
+        <button class="btn btn-outline-primary" type="submit">
+          Pesquisar
+        </button>
+      </div>
     </form>
   </div>
   <div class="col-4">
@@ -52,4 +52,3 @@
     </div>
   <?php endforeach; ?>
 </div>
-<?php $paginator->renderPagesNavigation(); ?>
