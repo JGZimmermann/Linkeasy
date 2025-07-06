@@ -7,6 +7,7 @@ use App\Models\TagInPost;
 use App\Models\Tag;
 use Core\Http\Controllers\Controller;
 use Core\Http\Request;
+use DateTime;
 use Lib\FlashMessage;
 
 class PostController extends Controller
@@ -38,6 +39,26 @@ class PostController extends Controller
         $this->render('posts/show', compact('post', 'title'));
     }
 
+    public function search(Request $request): void
+    {
+        $params = $request->getParams();
+        $postTitle = $params['post']['title'];
+        $posts = Post::where(['title' => $postTitle]);
+        if(!$posts) {
+          FlashMessage::danger('Não foi encontrado nenhum post');
+          $this->render('posts/index', [
+            'posts' => Post::all(),
+            'title' => 'Posts Registrados',
+            'tags' => Tag::all(),
+            'paginator' => Post::paginate(page:  $request->getParam('page', 1)),
+          ]);
+          return;
+        }
+        $tags = Tag::all();
+        $title = "Posts filtrados por {$postTitle}";
+        $this->render('posts/filter', compact( 'posts', 'title', 'tags'));
+
+    }
     public function new(): void
     {
         $post = $this->current_user->post()->new();
@@ -52,6 +73,17 @@ class PostController extends Controller
     $post = new Post($params);
 
     $post->user_id = $this->current_user->id;
+
+    $date = new DateTime($post->date);
+    $now = new DateTime();
+
+    if ($date < $now->setTime(0, 0)) {
+      FlashMessage::danger('A data do post não pode ser anterior à data de hoje.');
+      $title = 'Novo Post';
+      $tags = Tag::all();
+      $this->render('posts/new', compact('post', 'title', 'tags'));
+      return;
+    }
 
     if ($post->save()) {
       $tags = $request->getParam('tags');
@@ -71,7 +103,8 @@ class PostController extends Controller
     } else {
       FlashMessage::danger('Existem dados incorretos! Por favor, verifique!');
       $title = 'Novo Post';
-      $this->render('posts/new', compact('post', 'title'));
+      $tags = Tag::all();
+      $this->render('posts/new', compact('post', 'title', 'tags'));
     }
   }
 
@@ -90,7 +123,7 @@ class PostController extends Controller
     {
       $id = $request->getParam('id');
       $params = $request->getParam('post');
-      $tags = $request->getParam('tags');
+      $tags = $request->getParam('tags') ?? Tag::all();;
 
       if (!$params) {
         FlashMessage::danger('Erro ao atualizar: dados não recebidos corretamente.');
@@ -104,6 +137,17 @@ class PostController extends Controller
       $post->title = $params['title'] ?? '';
       $post->body = $params['body'] ?? '';
       $post->date = $params['date'] ?? null;
+
+      $date = new \DateTime($post->date);
+      $now = new \DateTime();
+
+      if ($date < $now->setTime(0, 0)) {
+        FlashMessage::danger('A data do post não pode ser anterior à data de hoje.');
+        $title = "Editar Post #{$post->id}";
+        $tags = Tag::all();
+        $this->render('posts/edit', compact('post', 'title', 'tags'));
+        return;
+      }
 
       if ($post->save()) {
         if (is_array($tags)) {
@@ -126,7 +170,7 @@ class PostController extends Controller
     } else {
           FlashMessage::danger('Existem dados incorretos. Por favor, revise o formulário.');
           $title = "Editar Post #{$post->id}";
-          $this->render('posts/edit', compact('post', 'title'));
+          $this->render('posts/edit', compact('post', 'title', 'tags'));
         }
     }
 

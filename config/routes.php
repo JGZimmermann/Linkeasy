@@ -16,8 +16,6 @@ Route::middleware('auth')->group(function () {
     // Create
     Route::get('/posts/new', [PostController::class, 'new'])->name('posts.new');
     Route::post('/posts', [PostController::class, 'create'])->name('posts.create');
-    Route::get('/tags/new', [TagController::class, 'new'])->name('tags.new');
-    Route::post('/tags', [TagController::class, 'create'])->name('tags.create');
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
 
     // Retrieve
@@ -26,8 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
     Route::get('/tags', [TagController::class, 'index'])->name('tags.index');
     Route::get('/tags/page/{page}', [TagController::class, 'index'])->name('tags.paginate');
-    Route::get('/tags/{id}', [TagController::class, 'show'])->name('tags.show');
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/tags/search', [TagController::class, 'search'])->name('tags.search');
+    Route::get('/posts/filter/{id}', [TagController::class, 'postsFilteredByTags'])->name('posts.filter');
+    Route::post('/posts/search', [PostController::class, 'search'])->name('posts.search');
 
     // Update
     Route::get('/tags/{id}/edit', [TagController::class, 'edit'])->name('tags.edit');
@@ -41,6 +41,11 @@ Route::middleware('role')->group(function () {
     //Create
     Route::get('/users/new', [AuthenticationsController::class, 'newUser'])->name('users.new');
     Route::post('/users', [AuthenticationsController::class, 'createUser'])->name('users.create');
+    Route::get('/tags/new', [TagController::class, 'new'])->name('tags.new');
+    Route::post('/tags', [TagController::class, 'create'])->name('tags.create');
+
+    // Delete
+    Route::delete('/tags/{id}', [TagController::class, 'destroy'])->name('tags.destroy');
 });
 
 Route::middleware('permission')->group(function () {
@@ -51,5 +56,5 @@ Route::middleware('permission')->group(function () {
 
     // Delete
     Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
-    Route::delete('/tags/{id}', [TagController::class, 'destroy'])->name('tags.destroy');
+
 });
