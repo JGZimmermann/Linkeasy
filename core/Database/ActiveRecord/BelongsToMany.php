@@ -3,6 +3,7 @@
 namespace Core\Database\ActiveRecord;
 
 use Core\Database\Database;
+use Lib\Paginator;
 use PDO;
 class BelongsToMany
 {

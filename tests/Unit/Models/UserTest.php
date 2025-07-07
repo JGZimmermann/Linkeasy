@@ -18,7 +18,7 @@ class UserTest extends TestCase
             'name' => 'User 1',
             'email' => 'fulano@example.com',
             'password' => '123456',
-            'password_confirmation' => '123456'
+            'role' => 'PROFESSOR'
         ]);
         $this->user->save();
 
@@ -26,7 +26,7 @@ class UserTest extends TestCase
             'name' => 'User 2',
             'email' => 'fulano1@example.com',
             'password' => '123456',
-            'password_confirmation' => '123456'
+            'role' => 'MODERATOR'
         ]);
         $this->user2->save();
     }
@@ -83,21 +83,6 @@ class UserTest extends TestCase
 
         $this->assertEquals('não pode ser vazio!', $user->errors('name'));
         $this->assertEquals('não pode ser vazio!', $user->errors('email'));
-    }
-
-    public function test_errors_should_return_password_confirmation_error(): void
-    {
-        $user = new User([
-            'name' => 'User 3',
-            'email' => 'fulano3@example.com',
-            'password' => '123456',
-            'password_confirmation' => '1234567'
-        ]);
-
-        $this->assertFalse($user->isValid());
-        $this->assertFalse($user->save());
-
-        $this->assertEquals('as senhas devem ser idênticas!', $user->errors('password'));
     }
 
     public function test_find_by_id_should_return_the_user(): void

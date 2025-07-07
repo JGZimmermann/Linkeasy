@@ -10,8 +10,8 @@ use Tests\TestCase;
 class PaginatorTest extends TestCase
 {
     private Paginator $paginator;
-    /** @var mixed[] $problems */
-    private array $problems;
+    /** @var mixed[] $posts */
+    private array $posts;
 
     public function setUp(): void
     {
@@ -20,14 +20,14 @@ class PaginatorTest extends TestCase
             'name' => 'User 1',
             'email' => 'fulano@example.com',
             'password' => '123456',
-            'password_confirmation' => '123456'
+            'role' => 'PROFESSOR'
         ]);
         $user->save();
 
         for ($i = 0; $i < 10; $i++) {
-            $problem = new Post(['title' => "Post $i", 'user_id' => $user->id]);
-            $problem->save();
-            $this->problems[] = $problem;
+            $post = new Post(['title' => "Post $i", 'user_id' => $user->id, 'body' => "Body $i", 'date' => '2025-07-05 22:57:10']);
+            $post->save();
+            $this->post[] = $post;
         }
         $this->paginator = new Paginator(Post::class, 1, 5, 'posts', ['title']);
     }
@@ -44,8 +44,8 @@ class PaginatorTest extends TestCase
 
     public function test_total_of_pages_when_the_division_is_not_exact(): void
     {
-        $problem = new Post(['title' => 'Post 11', 'user_id' => $this->problems[0]->user_id]);
-        $problem->save();
+        $post = new Post(['title' => 'Post 11', 'user_id' => '1', 'body' => "Body 11", 'date' => '2025-07-05 22:57:10']);
+        $post->save();
         $this->paginator = new Paginator(Post::class, 1, 5, 'posts', ['title']);
 
         $this->assertEquals(3, $this->paginator->totalOfPages());
@@ -91,9 +91,13 @@ class PaginatorTest extends TestCase
 
     public function test_register_return_all(): void
     {
+        $posts = [];
         $this->assertCount(5, $this->paginator->registers());
+        foreach (Post::all() as $post) {
+          $posts[] = $post;
+        }
 
         $paginator = new Paginator(Post::class, 1, 10, 'posts', ['title', 'user_id']);
-        $this->assertEquals($this->problems, $paginator->registers());
+        $this->assertEquals($posts, $paginator->registers());
     }
 }
