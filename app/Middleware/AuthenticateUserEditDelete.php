@@ -15,6 +15,11 @@ class AuthenticateUserEditDelete implements Middleware
     $params = $request->getParams();
     $post = Post::findById($params['id']);
 
+    if (!Auth::check()) {
+      FlashMessage::danger('Você deve estar logado para acessar essa página');
+      $this->redirectTo(route('users.login'));
+    }
+
     if (!Auth::checkEditPriveleges($post)) {
       FlashMessage::danger('Você não tem permissão para acessar essa página');
       $this->redirectTo(route('posts.index'));

@@ -4,19 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d65ba7d4-b615-41fe-a718-cd2b86822054" name="Changes" comment="&quot;Upload de imagem funcionando&quot;">
-      <change afterPath="$PROJECT_DIR$/app/views/posts/filter.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/tags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/PostController.php" afterDir="false" />
+    <list default="true" id="d65ba7d4-b615-41fe-a718-cd2b86822054" name="Changes" comment="&quot;Sistema funcionando&quot;">
+      <change afterPath="$PROJECT_DIR$/tests/Acceptance/Authentication/LoginCest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Acceptance/BaseAcceptanceCest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Acceptance/Posts/PostCest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Support/Helper/LoginHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Controllers/PostControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Models/PostTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LinkEasy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LinkEasy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controllers/TagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/TagController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/edit.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/edit.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/new.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/new.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tags/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Middleware/AuthenticateUserEditDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Middleware/AuthenticateUserEditDelete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Middleware/AuthenticateUserRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Middleware/AuthenticateUserRole.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Database/ActiveRecord/BelongsToMany.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database/ActiveRecord/BelongsToMany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Browser/Problems/AuthenticatedTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Browser/Posts/AuthenticatedTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Controllers/ProblemsControllerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Core/Http/header_mock.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Core/Http/header_mock.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Lib/Authentication/AuthTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Lib/Authentication/AuthTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Lib/PaginatorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Lib/PaginatorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Models/ProblemTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Models/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Models/UserTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +92,45 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
       <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/codeception/codeception" />
+      <path value="$PROJECT_DIR$/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-asserts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-web" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-innerbrowser" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-phpbrowser" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-asserts" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/vendor/staabm/side-effects-detector" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-webdriver" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -90,22 +141,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -128,7 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1751756536764</updated>
       <workItem from="1751756538020" duration="14094000" />
-      <workItem from="1751816098783" duration="6405000" />
+      <workItem from="1751816098783" duration="16082000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Upload de imagem funcionando&quot;">
       <option name="closed" value="true" />
@@ -146,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751758667003</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&quot;Sistema funcionando&quot;">
+      <option name="closed" value="true" />
+      <created>1751822536732</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751822536732</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +212,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Upload de imagem funcionando&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Upload de imagem funcionando&quot;" />
+    <MESSAGE value="&quot;Sistema funcionando&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Sistema funcionando&quot;" />
   </component>
 </project>

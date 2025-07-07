@@ -11,6 +11,11 @@ class AuthenticateUserRole implements Middleware
 {
     public function handle(Request $request): void
     {
+        if (!Auth::check()) {
+          FlashMessage::danger('Você deve estar logado para acessar essa página');
+          $this->redirectTo(route('users.login'));
+        }
+
         if (!Auth::checkRole()) {
             FlashMessage::danger('Você não tem permissão para acessar essa página');
             $this->redirectTo(route('posts.index'));

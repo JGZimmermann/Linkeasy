@@ -54,6 +54,8 @@ class TagController extends Controller
 
     $posts = Tag::findById($params['id'])->posts()->get();
 
+    //$paginator = Tag::findById($params['id'])->posts()->paginate(page:  $request->getParam('page', 1));
+
     $title = "Posts filtrados por {$tagName}";
 
     $this->render('posts/filter', compact( 'posts', 'title', 'tags'));

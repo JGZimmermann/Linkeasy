@@ -8,7 +8,7 @@ class AuthenticatedTest extends FrameworkTestCase
 {
     public function test_should_redirect_if_not_authenticated_to_index(): void
     {
-        $page = file_get_contents('http://web/problems');
+        $page = file_get_contents('http://web/posts');
 
         $statusCode = $http_response_header[0];
         $location = $http_response_header[10];
@@ -19,7 +19,7 @@ class AuthenticatedTest extends FrameworkTestCase
 
     public function test_should_redirect_if_not_authenticated_to_show(): void
     {
-        $page = file_get_contents('http://web/problems/1');
+        $page = file_get_contents('http://web/posts/1');
 
         $statusCode = $http_response_header[0];
         $location = $http_response_header[10];
@@ -30,7 +30,7 @@ class AuthenticatedTest extends FrameworkTestCase
 
     public function test_should_redirect_if_not_authenticated_to_edit(): void
     {
-        $page = file_get_contents('http://web/problems/1/edit');
+        $page = file_get_contents('http://web/posts/1/edit');
 
         $statusCode = $http_response_header[0];
         $location = $http_response_header[10];
@@ -41,7 +41,7 @@ class AuthenticatedTest extends FrameworkTestCase
 
     public function test_should_redirect_if_not_authenticated_to_new(): void
     {
-        $page = file_get_contents('http://web/problems/new');
+        $page = file_get_contents('http://web/posts/new');
 
         $statusCode = $http_response_header[0];
         $location = $http_response_header[10];
