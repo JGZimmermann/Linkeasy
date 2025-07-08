@@ -4,31 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d65ba7d4-b615-41fe-a718-cd2b86822054" name="Changes" comment="&quot;Sistema funcionando&quot;">
-      <change afterPath="$PROJECT_DIR$/tests/Acceptance/Authentication/LoginCest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Acceptance/BaseAcceptanceCest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Acceptance/Posts/PostCest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Support/Helper/LoginHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/Controllers/PostControllerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/Models/PostTest.php" afterDir="false" />
+    <list default="true" id="d65ba7d4-b615-41fe-a718-cd2b86822054" name="Changes" comment="&quot;Começo dos testes&quot;">
+      <change afterPath="$PROJECT_DIR$/tests/Acceptance/Tags/TagCest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Access/PostAccessTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Access/ProfileAvatarTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Access/TagAccessTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Controllers/ProfileControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/Controllers/TagControllerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/files/avatar_test.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/LinkEasy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LinkEasy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Controllers/TagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/TagController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Middleware/AuthenticateUserEditDelete.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Middleware/AuthenticateUserEditDelete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Middleware/AuthenticateUserRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Middleware/AuthenticateUserRole.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/login.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Database/ActiveRecord/BelongsToMany.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database/ActiveRecord/BelongsToMany.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/helpers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Browser/Problems/AuthenticatedTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Browser/Posts/AuthenticatedTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Controllers/ProblemsControllerTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Core/Http/header_mock.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Core/Http/header_mock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Lib/Authentication/AuthTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Lib/Authentication/AuthTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Acceptance/Authentication/LoginCest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Acceptance/Authentication/LoginCest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Acceptance/Posts/PostCest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Acceptance/Posts/PostCest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Controllers/ControllerTestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Controllers/ControllerTestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Controllers/PostControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Controllers/PostControllerTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/Lib/PaginatorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Lib/PaginatorTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Models/ProblemTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/Models/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Models/UserTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,13 +51,13 @@
     &quot;assignee&quot;: &quot;JGZimmermann&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:JGZimmermann/Linkeasy.git",
-    "accountId": "eb65e232-0e94-4738-a7bb-ab9dfc6d1d21"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:JGZimmermann/Linkeasy.git&quot;,
+    &quot;accountId&quot;: &quot;eb65e232-0e94-4738-a7bb-ab9dfc6d1d21&quot;
   }
-}]]></component>
-  <component name="PhpWorkspaceProjectConfiguration">
+}</component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
@@ -131,6 +127,8 @@
       <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/codeception/module-webdriver" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-db" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-filesystem" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -141,21 +139,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/jose/Downloads/LinkEasy/tests/files&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/files" />
+      <recent name="$PROJECT_DIR$/tests/Acceptance/Tags" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -178,7 +183,8 @@
       <option name="presentableId" value="Default" />
       <updated>1751756536764</updated>
       <workItem from="1751756538020" duration="14094000" />
-      <workItem from="1751816098783" duration="16082000" />
+      <workItem from="1751816098783" duration="17088000" />
+      <workItem from="1751933080876" duration="9728000" />
     </task>
     <task id="LOCAL-00001" summary="&quot;Upload de imagem funcionando&quot;">
       <option name="closed" value="true" />
@@ -204,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751822536732</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="&quot;Começo dos testes&quot;">
+      <option name="closed" value="true" />
+      <created>1751857850944</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751857850944</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +227,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Upload de imagem funcionando&quot;" />
     <MESSAGE value="&quot;Sistema funcionando&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Sistema funcionando&quot;" />
+    <MESSAGE value="&quot;Começo dos testes&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Começo dos testes&quot;" />
   </component>
 </project>
