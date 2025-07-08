@@ -27,7 +27,7 @@ class PaginatorTest extends TestCase
         for ($i = 0; $i < 10; $i++) {
             $post = new Post(['title' => "Post $i", 'user_id' => $user->id, 'body' => "Body $i", 'date' => '2025-07-05 22:57:10']);
             $post->save();
-            $this->post[] = $post;
+            $this->posts[] = $post;
         }
         $this->paginator = new Paginator(Post::class, 1, 5, 'posts', ['title']);
     }
@@ -65,7 +65,7 @@ class PaginatorTest extends TestCase
     {
         $this->assertFalse($this->paginator->hasPreviousPage());
 
-        $paginator = new Paginator(Post::class, 2, 5, 'posts', ['title']);
+        $paginator = new Paginator(Post::class, 2, 5, 'posts', ['title', 'user_id', 'body', 'date']);
         $this->assertTrue($paginator->hasPreviousPage());
     }
 
@@ -91,13 +91,9 @@ class PaginatorTest extends TestCase
 
     public function test_register_return_all(): void
     {
-        $posts = [];
         $this->assertCount(5, $this->paginator->registers());
-        foreach (Post::all() as $post) {
-          $posts[] = $post;
-        }
 
-        $paginator = new Paginator(Post::class, 1, 10, 'posts', ['title', 'user_id']);
-        $this->assertEquals($posts, $paginator->registers());
+        $paginator = new Paginator(Post::class, 1, 10, 'posts', ['title', 'user_id', 'body', 'date']);
+        $this->assertEquals($this->posts, $paginator->registers());
     }
 }
